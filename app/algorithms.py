@@ -1,6 +1,5 @@
 class ResultSubmitter:
     def submit(self, problem_name, result):
-        # โค้ดนี้สมมติว่าต้องต่อเน็ตไปส่งค่าให้เซิร์ฟเวอร์ HackerRank
         raise ConnectionError("Cannot connect to HackerRank server in real life!")
 
 # Wrapper ที่เรียกใช้ Submitter
@@ -10,7 +9,6 @@ class ProblemSolver:
 
     def solve_and_submit(self, problem_name, func, *args):
         result = func(*args)
-        # ส่งผลลัพธ์ไปที่เซิร์ฟเวอร์
         return self.submitter.submit(problem_name, result)
 
 # ==========================================
