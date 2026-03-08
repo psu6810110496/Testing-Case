@@ -26,35 +26,7 @@ class TestHackerRankAlgorithms(unittest.TestCase):
         self.assertIn("Stubbed", response)
         self.assertEqual(stub.submitted_data["FunnyString"], "Funny")
 
-    # --- 1. Funny String Tests ---
-    def test_funnyString_funny(self):
-        self.assertEqual(funnyString("acxz"), "Funny") # Normal case
-        
-    def test_funnyString_not_funny(self):
-        self.assertEqual(funnyString("bcxz"), "Not Funny") # Defect case 
-
-    # --- 2. Alternating Characters Tests ---
-    def test_alternatingCharacters_no_deletions(self):
-        self.assertEqual(alternatingCharacters("ABABABAB"), 0)
-        
-    def test_alternatingCharacters_all_same(self):
-        self.assertEqual(alternatingCharacters("AAAA"), 3)
-
-    # --- 3. Caesar Cipher Tests ---
-    def test_caesarCipher_normal_shift(self):
-        self.assertEqual(caesarCipher("middle-Outz", 2), "okffng-Qwvb")
-        
-    def test_caesarCipher_large_shift(self):
-        self.assertEqual(caesarCipher("abc", 26), "abc")
-
-    # --- 4. Two Characters Tests ---
-    def test_alternate_success(self):
-        self.assertEqual(alternate("beabeefeab"), 5)
-        
-    def test_alternate_no_valid(self):
-        self.assertEqual(alternate("abba"), 0)
-
-    # --- 5. Grid Challenge Tests ---
+    # Grid Challenge Tests
     def test_gridChallenge_yes(self):
         grid = ["ebacd", "fghij", "olmkn", "trpqs", "xywuv"]
         self.assertEqual(gridChallenge(grid), "YES") # จัดเรียงได้
@@ -62,6 +34,34 @@ class TestHackerRankAlgorithms(unittest.TestCase):
     def test_gridChallenge_no(self):
         grid = ["mpxz", "abcd", "wlmm"]
         self.assertEqual(gridChallenge(grid), "NO") # จัดเรียงไม่ได้
+
+    # Alternating Characters Tests
+    def test_alternatingCharacters_no_deletions(self):
+        self.assertEqual(alternatingCharacters("ABABABAB"), 0)
+        
+    def test_alternatingCharacters_all_same(self):
+        self.assertEqual(alternatingCharacters("AAAA"), 3)
+
+    # Caesar Cipher Tests
+    def test_caesarCipher_normal_shift(self):
+        self.assertEqual(caesarCipher("middle-Outz", 2), "okffng-Qwvb")
+        
+    def test_caesarCipher_large_shift(self):
+        self.assertEqual(caesarCipher("abc", 26), "abc")
+
+    # Funny String Tests
+    def test_funnyString_funny(self):
+        self.assertEqual(funnyString("acxz"), "Funny") # Normal case
+        
+    def test_funnyString_not_funny(self):
+        self.assertEqual(funnyString("bcxz"), "Not Funny") # Defect case 
+
+    # Two Characters Tests
+    def test_alternate_success(self):
+        self.assertEqual(alternate("beabeefeab"), 5)
+        
+    def test_alternate_no_valid(self):
+        self.assertEqual(alternate("abba"), 0)
 
 if __name__ == '__main__':
     unittest.main()
